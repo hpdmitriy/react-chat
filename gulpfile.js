@@ -9,7 +9,7 @@ process.on('uncaughtException', err => {
 gulp.task('nodemon', callback => {
     nodemon({
         nodeArgs: ['--debug'],
-        script: './src/server/index.js',
+        script: 'index.js',
         watch: ['*'],
         ext: 'js css sss html jsx json'
     });
