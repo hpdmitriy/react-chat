@@ -17,7 +17,7 @@ ReactDOM.render(
   <Provider store={store}>
     <div>
       <Router children={routes} history={browserHistory} />
-      {process.env.NODE_ENV !== 'production' && <DevTools />}
+      {/*{process.env.NODE_ENV !== 'production' && <DevTools />}*/}
     </div>
   </Provider>,
   rootElement
