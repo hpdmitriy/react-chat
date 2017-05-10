@@ -1,0 +1,8 @@
+.idea
+node_modules
+npm-debug.log*
+
+Procfile
+.DS_Store
+static/
+
