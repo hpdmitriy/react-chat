@@ -81,12 +81,12 @@ app.get('/*', function(req, res) {
     });
 });
 
-const server = app.listen(43760, (err) => {
+const server = app.listen(app.get('port'), 'localhost', (err) => {
     if (err) {
         console.log(err);
         return;
     }
-    console.log('Dev server listening on port: ', 43760);
+    console.log('Dev server listening on port: ', app.get('port'));
 });
 
 const io = new SocketIo(server, {path: '/api/chat'});
