@@ -1,6 +1,6 @@
-require('babel-core/register'); //enables ES6 ('import'.. etc) in Node
+require('babel-core/register');
 if (process.env.NODE_ENV !== 'production') {
-  require('./server.dev');
+    require('./server.dev');
 } else {
-  require('./server.prod');
+    require('./server.prod');
 }
