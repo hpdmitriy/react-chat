@@ -19,8 +19,11 @@ require('./modules/db/mongoose');
 import SocketIo from 'socket.io';
 import morgan from 'morgan';
 
-const port = config.port;
+//const port = config.port;
+
+
 const app = express();
+app.set('port', (process.env.PORT || 5000));
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
 process.on('uncaughtException', (err) => {
@@ -78,12 +81,12 @@ app.get('/*', function(req, res) {
     });
 });
 
-const server = app.listen(port, 'localhost', (err) => {
+const server = app.listen(app.get('port'), 'localhost', (err) => {
     if (err) {
         console.log(err);
         return;
     }
-    console.log('Dev server listening on port: ', port);
+    console.log('Dev server listening on port: ', app.get('port'));
 });
 
 const io = new SocketIo(server, {path: '/api/chat'});
